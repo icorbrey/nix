@@ -5,8 +5,29 @@
 
     home.packages = with pkgs; [
         neofetch
-        vim
     ];
+
+    programs.vim = {
+        defaultEditor = true;
+        enable = true;
+        settings = {
+            background = "dark";
+        };
+        plugins = with pkgs.vimPlugins; [
+            # Text editing
+            vim-surround
+
+            # Git
+            vim-fugitive
+
+            # Theming
+            vim-airline
+            vim-airline-themes
+        ];
+        extraConfig = ''
+            let g:airline_theme = 'bubblegum'
+        '';
+    };
 
     # Don't change this!
     home.stateVersion = "23.11";
