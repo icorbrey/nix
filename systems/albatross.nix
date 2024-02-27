@@ -7,6 +7,8 @@
 }: {
   imports = [nixos-wsl.nixosModules.wsl];
 
+  # Test comment!
+
   nix.settings.experimental-features = "nix-command flakes";
   networking.hostName = "albatross";
 

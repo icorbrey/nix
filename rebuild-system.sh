@@ -1,5 +1,5 @@
 system=$1
-if [[ ! -f ./systems/$system.txt ]]; then
+if [[ ! -f ./systems/$system.nix ]]; then
     echo "error: System \"$system\" does not exist."
     exit
 fi
