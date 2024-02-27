@@ -6,7 +6,7 @@ fi
 
 vim "./systems/$system.nix"
 alejandra . &>/dev/null
-git diff -U0 *.nix
+git diff -U0 **/*.nix
 echo "Rebuilding "$system"..."
 sudo nixos-rebuild switch --flake .#$system &> .nixos-switch.log \
     || (cat .nixos-switch.log | grep --color error && false)
