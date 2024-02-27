@@ -20,10 +20,10 @@
     userName = "Isaac Corbrey";
     userEmail = "icorbrey@gmail.com";
     extraConfig = {
-        diff.algorithm = "histogram";
+      diff.algorithm = "histogram";
     };
     diff-so-fancy = {
-        enable = true;
+      enable = true;
     };
   };
 
