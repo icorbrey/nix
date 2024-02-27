@@ -5,6 +5,7 @@
 
     home.packages = with pkgs; [
         neofetch
+        vim
     ];
 
     # Don't change this!
