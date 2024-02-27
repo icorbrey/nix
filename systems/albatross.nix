@@ -22,6 +22,8 @@
         enable = true;
     };
 
+    nix.settings.experimental-features = "nix-command flakes";
+
     # Don't change this!
     system.stateVersion = "23.11";
 }

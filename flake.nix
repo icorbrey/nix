@@ -17,28 +17,25 @@
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    outputs = {
+    outputs = inputs @ {
         home-manager,
         nixos-wsl,
         nixpkgs,
-        self
-    } @ inputs: let 
+        self,
+        ...
+    }: let 
         system = "x86_64-linux";
         pkgs = nixpkgs.legacyPackages.${system};
     in {
-        homeConfigurations = {
-            icorbrey = home-manager.lib.homeManagerConfiguration {
-                inherit pkgs;
-                modules = [./users/icorbrey.nix];
-            };
+        nixosConfigurations.albatross = nixpkgs.lib.nixosSystem {
+            modules = [./systems/albatross.nix];
+            specialArgs = inputs;
+            inherit system;
         };
 
-        nixosConfigurations = {
-            albatross = nixpkgs.lib.nixosSystem {
-                inherit system;
-                specialArgs = inputs;
-                modules = [./systems/albatross.nix];
-            };
+        homeConfigurations.icorbrey = home-manager.lib.homeManagerConfiguration {
+            modules = [./users/icorbrey.nix];
+            inherit pkgs;
         };
     };
 }
