@@ -27,8 +27,6 @@
     };
   };
 
-  # Test comment
-
   programs.vim = {
     enable = true;
     settings = {
