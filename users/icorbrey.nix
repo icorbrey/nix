@@ -15,6 +15,18 @@
     neofetch
   ];
 
+  programs.git = {
+    enable = true;
+    userName = "Isaac Corbrey";
+    userEmail = "icorbrey@gmail.com";
+    extraConfig = {
+        diff.algorithm = "histogram";
+    };
+    diff-so-fancy = {
+        enable = true;
+    };
+  };
+
   programs.vim = {
     enable = true;
     settings = {
