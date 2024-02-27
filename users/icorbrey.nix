@@ -1,35 +1,42 @@
-{ config, pkgs, ... }:
 {
-    home.homeDirectory = "/home/icorbrey";
-    home.username = "icorbrey";
+  config,
+  pkgs,
+  ...
+}: {
+  home.homeDirectory = "/home/icorbrey";
+  home.username = "icorbrey";
 
-    home.packages = with pkgs; [
-        neofetch
-    ];
+  home.sessionVariables = {
+    EDITOR = "vim";
+  };
 
-    programs.vim = {
-        defaultEditor = true;
-        enable = true;
-        settings = {
-            background = "dark";
-        };
-        plugins = with pkgs.vimPlugins; [
-            # Text editing
-            vim-surround
+  home.packages = with pkgs; [
+    alejandra
+    neofetch
+  ];
 
-            # Git
-            vim-fugitive
-
-            # Theming
-            vim-airline
-            vim-airline-themes
-        ];
-        extraConfig = ''
-            let g:airline_theme = 'bubblegum'
-        '';
+  programs.vim = {
+    enable = true;
+    settings = {
+      background = "dark";
     };
+    plugins = with pkgs.vimPlugins; [
+      # Text editing
+      vim-surround
 
-    # Don't change this!
-    home.stateVersion = "23.11";
-    programs.home-manager.enable = true;
+      # Git
+      vim-fugitive
+
+      # Theming
+      vim-airline
+      vim-airline-themes
+    ];
+    extraConfig = ''
+      let g:airline_theme = 'bubblegum'
+    '';
+  };
+
+  # Don't change this!
+  home.stateVersion = "23.11";
+  programs.home-manager.enable = true;
 }
