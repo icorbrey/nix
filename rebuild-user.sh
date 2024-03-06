@@ -1,6 +1,6 @@
 user=$1
 if [[ ! -f ./users/$user.nix ]]; then
-    echo "error: System \"$user\" does not exist."
+    echo "error: User \"$user\" does not exist."
     exit
 fi
 
