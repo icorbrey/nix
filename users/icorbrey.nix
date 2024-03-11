@@ -14,6 +14,7 @@
     alejandra
     helix
     neofetch
+    rustup
   ];
 
   programs.git = {
