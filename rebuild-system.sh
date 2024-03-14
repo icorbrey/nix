@@ -4,7 +4,7 @@ if [[ ! -f ./systems/$system.nix ]]; then
     exit
 fi
 
-vim "./systems/$system.nix"
+hx "./systems/$system.nix"
 alejandra . &>/dev/null
 git diff -U0 **/*.nix
 echo "Rebuilding "$system"..."

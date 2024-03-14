@@ -4,7 +4,7 @@ if [[ ! -f ./users/$user.nix ]]; then
     exit
 fi
 
-vim "./users/$user.nix"
+hx "./users/$user.nix"
 alejandra . &>/dev/null
 git diff -U0 **/*.nix
 echo "Rebuilding "$user"..."
