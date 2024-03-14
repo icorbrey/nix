@@ -7,11 +7,12 @@
   home.username = "icorbrey";
 
   home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "hx";
   };
 
   home.packages = with pkgs; [
     alejandra
+    gcc
     helix
     neofetch
     rustup
