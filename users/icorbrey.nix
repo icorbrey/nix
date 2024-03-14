@@ -16,6 +16,7 @@
     helix
     neofetch
     rustup
+    tree
   ];
 
   programs.git = {
